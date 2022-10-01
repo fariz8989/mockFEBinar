@@ -25,7 +25,7 @@ function Register() {
       <div className="flex justify-center items-center h-screen bg-gray-200">
         <div className="login-form">
           <h1 className="text-3xl font-bold uppercase my-4">Register</h1>
-          <div className="inputBox my-2">
+          <div data-testid="emailForm" className="inputBox my-2">
             <input
               className="focus:ring-0 focus:border-black"
               type="text"
@@ -37,7 +37,7 @@ function Register() {
             />
             <span>Name</span>
           </div>
-          <div className="inputBox my-2">
+          <div data-testid="nameForm"className="inputBox my-2">
             <input
               className="focus:ring-0 focus:border-black"
               type="text"
@@ -49,7 +49,7 @@ function Register() {
             />
             <span>Email</span>
           </div>
-          <div className="inputBox my-2">
+          <div data-testid="passwordForm"className="inputBox my-2">
             <input
               className="focus:ring-0 focus:border-black"
               type="text"

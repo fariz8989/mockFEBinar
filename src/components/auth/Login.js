@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 function Login(){
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [data,setData]=useState({});
     const errDisplay = useRef();
     function handleSubmit(){
@@ -28,14 +28,14 @@ function Login(){
 return(<>
 <div className="flex justify-center items-center h-screen bg-gray-200">
         <div className="login-form">
-        <h1 className="text-3xl font-bold uppercase my-4">Login</h1>
+        <h1 data-testid="emailForm"className="text-3xl font-bold uppercase my-4">Login</h1>
           <div className="inputBox my-2">
               <input onChange={(e)=>{
                 setData({...data,email:e.target.value})
               }} className="focus:ring-0 focus:border-black"type="text"required="required" name="email"/>
               <span>Email</span>
           </div>
-          <div className="inputBox my-2">
+          <div data-testid="passwordForm"className="inputBox my-2">
               <input
               onChange={(e)=>{
                 setData({...data,password:e.target.value})

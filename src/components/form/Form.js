@@ -9,7 +9,7 @@ const [create,setCreate] =useState({});
   const [product, setProduct] = useState({});
   const[edit,setEdit]=useState({})
   const token = sessionStorage.getItem("token");
-  const popUp = props.props.item.popUp;
+  const popUp = props.props.item?.popUp;
   useEffect(() => {
     
     axios({
@@ -18,7 +18,7 @@ const [create,setCreate] =useState({});
       headers: { authorization: token },
     }).then((res) => {
       setProduct(res.data.result);
-      console.log(res.data.result)
+ 
    
     }).catch(err=>{
       
@@ -31,7 +31,7 @@ const [create,setCreate] =useState({});
         headers: { authorization: token,'Content-Type':'application/json'},
         body:edit
       }).then(res=>{
-        console.log(res)
+   
       }).catch(err=>{
         console.log(err)
       })
@@ -62,7 +62,10 @@ const [create,setCreate] =useState({});
   switch (props.props.item?.status.type) {
     case "new":
       return (
-        <>
+        
+        <div data-testid="newForm" className="login-form">
+       
+          <>
           <h1 className="text-3xl font-bold uppercase my-4">Create New</h1>
           <div className="inputBox my-2">
             <input
@@ -117,11 +120,14 @@ const [create,setCreate] =useState({});
           className="hover:cursor-pointer my-4 text-gray-400 hover:text-black transition duration-300 ease-out text-sm underline">
             Back
           </span>
-        </>
+          </>
+          </div>
+        
       );
       break;
     case "edit":
       return (
+        <div data-testid="editForm" className="login-form">
         <>
           <h1 className="text-3xl font-bold uppercase my-4">Edit Product</h1>
           <div className="inputBox my-2">
@@ -178,10 +184,12 @@ const [create,setCreate] =useState({});
             Back
           </span>
         </>
+        </div>
       );
       break;
           case 'delete':
             return (
+              <div data-testid="deleteForm" className="login-form">
               <>
                 <h1 className="text-2xl text-center font-bold uppercase my-4">{`Are You Sure Want To Delete ${product?.name}`} </h1>
                 <div className="flex w-full p-4 gap-4">
@@ -197,6 +205,7 @@ const [create,setCreate] =useState({});
                   className="bg-gray-200 border-black border-4 text-black w-1/2 rounded-md hover:text-gray-200 hover:bg-black transition ease-out duration-500">Yes</button>
                 </div>
               </>
+              </div>
             );
             break;
     default:

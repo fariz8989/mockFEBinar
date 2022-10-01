@@ -4,9 +4,9 @@ import { icon } from "../../public/icon/icon";
 import Form from "../form/Form";
 import { Link } from "react-router-dom";
 function Home(props) {
-  const setStatus = props.props.function.setStatus;
-  const popUp = props.props.item.popUp;
-  const status = props.props.item.status;
+  const setStatus = props.props?.function.setStatus;
+  const popUp = props.props?.item.popUp;
+  const status = props.props?.item.status;
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -32,6 +32,7 @@ function Home(props) {
           className=" relative hidden w-full h-screen justify-center p-8  bg-low-black flex items-center"
         >
           <div
+          data-testid="popUp"
             onClick={() => {
               popUp.classList.toggle("hidden");
             }}
@@ -39,9 +40,9 @@ function Home(props) {
           >
             {icon.close}
           </div>
-          <div className="login-form">
+          
             <Form props={{item:{popUp,status}}} />
-          </div>
+         
         </div>
       </div>
 
