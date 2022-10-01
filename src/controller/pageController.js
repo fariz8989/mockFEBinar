@@ -8,9 +8,10 @@ function HomePage(){
     const[status,setStatus]= useState('')
     useEffect(()=>{
         setPopUp(document.getElementById('popup'));
-        console.log(document.getElementById('popup'))
+        
     },[])
     return(<>
+    
     <Navbar props={{item:{popUp,status},function:{setStatus}}}/>
     <Home props={{item:{popUp,status},function:{setStatus}}}/>
     </>)

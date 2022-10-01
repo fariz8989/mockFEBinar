@@ -29,7 +29,7 @@ function Home(props) {
       <div className=" w-full h-0 sticky top-0 z-10 ">
         <div
           id="popup"
-          className=" relative w-full h-screen justify-center p-8  bg-low-black flex items-center"
+          className=" relative hidden w-full h-screen justify-center p-8  bg-low-black flex items-center"
         >
           <div
             onClick={() => {
@@ -40,7 +40,7 @@ function Home(props) {
             {icon.close}
           </div>
           <div className="login-form">
-            <Form props={status} />
+            <Form props={{item:{popUp,status}}} />
           </div>
         </div>
       </div>
@@ -72,7 +72,13 @@ function Home(props) {
                     >
                       {icon.edit}
                     </div>
-                    <div className="w-6 h-6 hover:cursor-pointer hover:fill-slate-400 duration-300 ease-out transition">{icon.trash}</div>
+                    <div 
+                    onClick={() => {
+                      popUp.classList.toggle("hidden");
+                      setStatus({type:'delete',id:data.id})
+                    }}
+                    className="w-6 h-6 hover:cursor-pointer hover:fill-slate-400 duration-300 ease-out transition">
+                      {icon.trash}</div>
                   </div>
                 </div>
               </>
