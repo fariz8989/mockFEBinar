@@ -59,6 +59,7 @@ const [create,setCreate] =useState({});
       console.log(err)
     })
   }
+  {console.log(props.props)}
   switch (props.props.item?.status.type) {
     case "new":
       return (
