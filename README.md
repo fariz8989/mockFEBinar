@@ -21,10 +21,15 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 # Component Guide
 ## Form/Pop Up Form
-Form component receive props called props that contain :\
-popUp => div component that use as container for the form and to set toggle hidden class\
-status => an object that contain :\
-        id=> product id user want to delete or edit\
-        type => type of action user do,determined type of form that shows up\
-            value => 'new','delete','edit'\
-            
+Home and Navbar component receive props called props that contain :\
+### 1. item
+#### a).popUp 
+div elements for toggle popUp purpose\
+#### b).status
+contain an object properties type of action user do,determined type of form that shows up and product id user want to delete or edit\
+values :\
+type : 'new','edit','delete' (string)\
+id : (number)\
+
+2. function => function for set popUp form type\
+      
