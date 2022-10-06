@@ -42,7 +42,7 @@ const [create,setCreate] =useState({});
       method: "DELETE",
       headers: { authorization: token,'Content-Type':'application/json'}
     }).then(res=>{
-      console.log(res)
+      //console.log(res)
     }).catch(err=>{
       console.log(err)
     })
@@ -51,7 +51,7 @@ const [create,setCreate] =useState({});
     axios.post(`https://test-binar.herokuapp.com/v1/products/`,create,{headers: { authorization: token,'Content-Type':'application/json'}}
       
     ).then(res=>{
-      console.log(res)
+      //console.log(res)
       alert('Upload Succes')
     window.location.reload()
       
@@ -59,7 +59,7 @@ const [create,setCreate] =useState({});
       console.log(err)
     })
   }
-  {console.log(props.props)}
+
   switch (props.props.item?.status.type) {
     case "new":
       return (
